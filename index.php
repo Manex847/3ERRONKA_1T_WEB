@@ -2,7 +2,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-require_once 'conexion.php'; 
+require_once 'konexioa.php'; 
 ?>
 <?php
 $stmt = $conn->query("SELECT bezero_izena, bezero_abizenak, bezero_suskripzioa, deskripzioa, balorazioa FROM iritziak LIMIT 5");

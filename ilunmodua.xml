@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modo_oscuro>
+    <textos>
+        <activar>🌙 Modu Iluna</activar>
+        <desactivar>☀️ Modu Argia</desactivar>
+    </textos>
+    <colores>
+        <fondo>#121212</fondo>
+        <fondo_elementos>#1e1e1e</fondo_elementos>
+        <texto>#ffffff</texto>
+        <texto_secundario>#cccccc</texto_secundario>
+        <borde>#333333</borde>
+        <boton>blue</boton>
+        <boton_hover>darkblue</boton_hover>
+    </colores>
+</modo_oscuro>
