@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<modo_oscuro>
-    <textos>
-        <activar>🌙 Modu Iluna</activar>
-        <desactivar>☀️ Modu Argia</desactivar>
-    </textos>
-    <colores>
-        <fondo>#121212</fondo>
-        <fondo_elementos>#1e1e1e</fondo_elementos>
-        <texto>#ffffff</texto>
-        <texto_secundario>#cccccc</texto_secundario>
-        <borde>#333333</borde>
-        <boton>blue</boton>
-        <boton_hover>darkblue</boton_hover>
-    </colores>
-</modo_oscuro>
+<ilun_Modua>
+    <textuak>
+        <aktibatu>🌙 Modu Iluna</aktibatu>
+        <desaktubatu>☀️ Modu Argia</desaktubatu>
+    </textuak>
+    <koloreak>
+        <fondoa>#121212</fondoa>
+        <elementu_fondoa>#1e1e1e</elementu_fondoa>
+        <textua>#ffffff</textua>
+        <bigarren_textua>#cccccc</bigarren_textua>
+        <bordea>#333333</bordea>
+        <botoia>blue</botoia>
+        <botoi_hover>darkblue</botoi_hover>
+    </koloreak>
+</ilun_Modua>

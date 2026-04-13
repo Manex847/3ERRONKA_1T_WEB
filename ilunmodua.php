@@ -1,36 +1,36 @@
 <?php
 
-    $xmlModo = simplexml_load_file('ilunmodua.xml');
+    $xmlModua = simplexml_load_file('ilunmodua.xml');
     
-    $temaActual = isset($_SESSION['tema']) ? $_SESSION['tema'] : 'claro';
-    $esOscuro = ($temaActual === 'oscuro');
+    $oraingoTema = isset($_SESSION['tema']) ? $_SESSION['tema'] : 'claro';
+    $beltza = ($oraingoTema === 'oscuro');
 ?>
 
 
-<?php if ($esOscuro): ?>
+<?php if ($beltza): ?>
 <style>
     body {
-        background-color: <?php echo $xmlModo->colores->fondo; ?>;
-        color: <?php echo $xmlModo->colores->texto; ?>;
+        background-color: <?php echo $xmlModua->kolorea->fondo; ?>;
+        color: <?php echo $xmlModua->kolorea->texto; ?>;
     }
     .nor-gara,
     .ceo,
     .komentarioak,
     .iritzia,
     .goiburua {
-        background-color: <?php echo $xmlModo->colores->fondo_elementos; ?>;
-        color: <?php echo $xmlModo->colores->texto; ?>;
-        border-color: <?php echo $xmlModo->colores->borde; ?>;
+        background-color: <?php echo $xmlModua->kolorea->elementuak; ?>;
+        color: <?php echo $xmlModua->kolorea->texto; ?>;
+        border-color: <?php echo $xmlModua->kolorea->borde; ?>;
         box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
     }
     h1, h3, p {
-        color: <?php echo $xmlModo->colores->texto; ?>;
+        color: <?php echo $xmlModua->kolorea->texto; ?>;
     }
     .ceo h3 {
         color: #ffffff;
     }
     .ceo p, .iritzia p {
-        color: <?php echo $xmlModo->colores->texto_secundario; ?>;
+        color: <?php echo $xmlModua->kolorea->texto_secundario; ?>;
     }
 </style>
 <?php endif; ?>
@@ -41,7 +41,7 @@
         bottom: 20px;
         right: 20px;
         padding: 10px 20px;
-        background-color: <?php echo $xmlModo->colores->boton; ?>;
+        background-color: <?php echo $xmlModua->kolorea->boton; ?>;
         color: white;
         border: none;
         border-radius: 25px;
@@ -55,11 +55,11 @@
     }
 
     #btn-modo-oscuro:hover {
-        background-color: <?php echo $xmlModo->colores->boton_hover; ?>;
+        background-color: <?php echo $xmlModua->kolorea->boton_hover; ?>;
     }
 </style>
 
 
 <a href="toggle_modo.php" id="btn-modo-oscuro">
-    <?php echo $esOscuro ? $xmlModo->textos->desactivar : $xmlModo->textos->activar; ?>
+    <?php echo $beltza ? $xmlModua->textuak->kendu : $xmlModua->textuak->activar; ?>
 </a>
