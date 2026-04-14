@@ -12,11 +12,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="goiburua">
-            <h1>A1A CAR WASH</h1>
-        </div>
-    </header>
+    <?php include 'header.html'; ?>
 
     <main>
         <section class="lehen-atala" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Argazkiak/SloganFondo.webp');">

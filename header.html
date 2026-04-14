@@ -1,15 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prezioak</title>
-</head>
-<body>
-    <header>
-        <div class="goiburua">
-            <h1>A1A CAR WASH</h1>
-        </div>
-    </header>
-</body>
-</html>
+<header>
+    <div class="goiburua">
+        <button id="menu-btn" class="menu-botoia">☰</button>
+        <h1>A1A CAR WASH</h1>
+    </div>
+</header>
+
+<div id="sidebar" class="sidebar">
+    <button id="close-btn" class="close-botoia">&times;</button>
+    <ul>
+        <li><a href="index.php">Hasiera</a></li>
+        <li><a href="prezioak.php">Prezioak</a></li>
+        <li><a href="eskatuordua.php">Eskatu Ordua</a></li>
+    </ul>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#menu-btn").click(function(){
+            $("#sidebar").addClass("active");
+        });
+        
+        $("#close-btn").click(function(){
+            $("#sidebar").removeClass("active");
+        });
+    });
+</script>
