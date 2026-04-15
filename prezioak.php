@@ -73,6 +73,6 @@ if (session_status() === PHP_SESSION_NONE) {
             </div>
         </section>
     </main>
-    <?php include 'modooscuro.php'; ?>
+    <?php include 'ilunmodua.php'; ?>
 </body>
 </html>

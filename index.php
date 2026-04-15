@@ -68,6 +68,6 @@ $iritziak = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php endforeach; ?>
         </div>
     </section>
-    <?php include 'modooscuro.php'; ?>
+    <?php include 'ilunmodua.php'; ?>
 </body>
 </html>

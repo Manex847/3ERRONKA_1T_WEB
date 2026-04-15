@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST['email'];
     $pasahitza = $_POST['pasahitza'];
 
-    $sql = $conn->prepare("SELECT id, pasahitza FROM usuarios WHERE email = ?");
+    $sql = $conn->prepare("SELECT id, pasahitza FROM bezeroak WHERE email = ?");
     $sql->bind_param("s", $email);
     $sql->execute();
     $emaitza = $sql->get_result();
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $erabiltzailea = $emaitza->fetch_assoc();
 
         if (password_verify($pasahitza, $erabiltzailea['pasahitza'])) {
-            $_SESSION['usuario_id'] = $erabiltzailea['id'];
+            $_SESSION['bezero_id'] = $erabiltzailea['id'];
             header("Location: panel.php");
             exit();
         } else {
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 ?>
 
-<?php include 'header.php'; ?>
+<?php include 'header.html'; ?>
 
 <h2>Saioa hasi</h2>
 
@@ -44,6 +44,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <button type="submit">Sartu</button>
 </form>
-
-</body>
-</html>
