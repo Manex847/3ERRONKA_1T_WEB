@@ -32,7 +32,7 @@
     .ceo p, .iritzia p {
         color: <?php echo $xmlModua->kolorea->texto_secundario; ?>;
     }
-</style>
+</style>h
 <?php endif; ?>
 
 <style>
@@ -54,12 +54,12 @@
         display: inline-block;
     }
 
-    #btn-modo-oscuro:hover {
+    #btn-modu-beltza:hover {
         background-color: <?php echo $xmlModua->kolorea->boton_hover; ?>;
     }
 </style>
 
 
-<a href="toggle_modo.php" id="btn-modo-oscuro">
+<a href="toggle_modua.php" id="btn-modu-beltza">
     <?php echo $beltza ? $xmlModua->textuak->kendu : $xmlModua->textuak->activar; ?>
 </a>
