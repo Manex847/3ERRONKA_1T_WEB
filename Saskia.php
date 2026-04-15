@@ -39,12 +39,12 @@ $total = 0;
                                 $total += $azpitotala;
                             ?>
                             <tr>
-                                <td><?= htmlspecialchars($item['izena']) ?></td>
-                                <td><?= htmlspecialchars($item['mota']) ?></td>
-                                <td><?= number_format($item['prezioa'], 2) ?>€</td>
-                                <td><?= $item['kantitatea'] ?></td>
-                                <td><?= number_format($azpitotala, 2) ?>€</td>
-                                <td>
+                                <td data-label="Produktua"><?= htmlspecialchars($item['izena']) ?></td>
+                                <td data-label="Mota"><?= htmlspecialchars($item['mota']) ?></td>
+                                <td data-label="Prezioa"><?= number_format($item['prezioa'], 2) ?>€</td>
+                                <td data-label="Kantitatea"><?= $item['kantitatea'] ?></td>
+                                <td data-label="Guztira"><?= number_format($azpitotala, 2) ?>€</td>
+                                <td data-label="Ekintza">
                                     <form action="saskira_gehitu.php" method="POST" style="display:inline;">
                                         <input type="hidden" name="ekintza" value="kendu">
                                         <input type="hidden" name="id" value="<?= htmlspecialchars($item['id']) ?>">
