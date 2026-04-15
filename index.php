@@ -18,7 +18,7 @@ $iritziak = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>A1A CAR WASH</title>
 </head>
 <body>
-    <?php include 'header.html'; ?>
+    <?php include 'header.php'; ?>
 
     <section class="lehen-atala">
         <div class="slogana">

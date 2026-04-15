@@ -2,8 +2,8 @@
 
     $xmlModua = simplexml_load_file('ilunmodua.xml');
     
-    $oraingoTema = isset($_SESSION['tema']) ? $_SESSION['tema'] : 'claro';
-    $beltza = ($oraingoTema === 'oscuro');
+    $oraingoTema = isset($_SESSION['modua']) ? $_SESSION['modua'] : 'argia';
+    $beltza = ($oraingoTema === 'iluna');
 ?>
 
 
@@ -36,7 +36,7 @@
 <?php endif; ?>
 
 <style>
-    #btn-modo-oscuro {
+    #btn-modo-iluna {
         position: fixed;
         bottom: 20px;
         right: 20px;
