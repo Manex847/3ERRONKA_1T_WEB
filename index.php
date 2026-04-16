@@ -2,10 +2,11 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-require_once 'conexion.php'; 
+require_once 'konexioa.php'; 
 ?>
 <?php
-$stmt = $conn->query("SELECT bezero_izena, bezero_abizenak, bezero_suskripzioa, deskripzioa, balorazioa FROM iritziak LIMIT 5");
+$stmt = $conn->query("SELECT b.izena AS bezero_izena, b.abizenak AS bezero_abizenak, b.suskripzioa AS bezero_suskripzioa, i.deskripzioa, i.balorazioa FROM iritziak i JOIN bezeroak b ON i.bezero_id = b.id LIMIT 5");
+
 $iritziak = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -18,7 +19,7 @@ $iritziak = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>A1A CAR WASH</title>
 </head>
 <body>
-    <?php include 'header.html'; ?>
+    <?php include 'header.php'; ?>
 
     <section class="lehen-atala">
         <div class="slogana">
@@ -68,6 +69,6 @@ $iritziak = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php endforeach; ?>
         </div>
     </section>
-    <?php include 'modooscuro.php'; ?>
+    <?php include 'ilunmodua.php'; ?>
 </body>
 </html>

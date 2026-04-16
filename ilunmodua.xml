@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilun_Modua>
+    <textuak>
+        <aktibatu>🌙 Modu Iluna</aktibatu>
+        <desaktubatu>☀️ Modu Argia</desaktubatu>
+    </textuak>
+    <koloreak>
+        <fondoa>#121212</fondoa>
+        <elementu_fondoa>#1e1e1e</elementu_fondoa>
+        <textua>#ffffff</textua>
+        <bigarren_textua>#cccccc</bigarren_textua>
+        <bordea>#333333</bordea>
+        <botoia>blue</botoia>
+        <botoi_hover>darkblue</botoi_hover>
+    </koloreak>
+</ilun_Modua>
