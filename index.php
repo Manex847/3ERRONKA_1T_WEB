@@ -26,7 +26,7 @@ $iritziak = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <p>Besteak probatu dituzu, orain probatu hoberena</p>
         </div>
         <div class="prezioak-ikusi">
-            <button class="botoiak" type="button" href="prezioak.html">IKUSI PREZIOAK</button>
+            <button class="botoiak" type="button" href="prezioak.php">IKUSI PREZIOAK</button>
         </div>
     </section>
 
