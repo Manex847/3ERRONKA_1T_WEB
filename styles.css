@@ -153,6 +153,64 @@
   color: #ccc;
 }
 
+/* Sidebar Estiloak */
+.menu-botoia {
+    position: absolute;
+    left: 20px;
+    background: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    border: none;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: rgb(18, 22, 29);
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    z-index: 1000;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li a {
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    color: #f1f1f1;
+    background-color: rgb(30, 36, 46);
+}
+
+.close-botoia {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2.5rem;
+    background: none;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
 @media (min-width: 1024px) {
     .goiburua {
         height: 150px;
@@ -201,5 +259,149 @@
     .iritzia {
         margin: 0;
         height: 100%;
+    }
+}
+
+/* Saskia Estiloak */
+.saskia-seksioa {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 10px 10px 15px lightgrey;
+}
+
+.saskia-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.saskia-taula {
+    width: 100%;
+    min-width: 500px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.saskia-taula th, .saskia-taula td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.95rem;
+}
+
+.saskia-taula th {
+    background-color: rgb(18, 22, 29);
+    color: white;
+}
+
+.saskia-totala {
+    text-align: right;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid rgb(18, 22, 29);
+}
+
+.saskia-botoiak-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.botoia-txikia-kendu {
+    padding: 5px 10px;
+    background-color: darkred;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.botoia-txikia-kendu:hover {
+    background-color: red;
+}
+
+/* Hizkuntza aukerak */
+.hizkuntza-aukerak {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    display: flex;
+    gap: 10px;
+}
+
+.hizkuntza {
+    width: 36px;
+    height: 36px;
+    background-color: rgb(30, 36, 46);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+
+.hizkuntza img {
+    width: 22px;
+    height: 22px;
+    border-radius: 3px;
+}
+
+.hizkuntza:hover {
+    background-color: rgb(50, 56, 66);
+    cursor: pointer;
+}
+
+.hizkuntza.aktibo {
+    background-color: blue;
+    border-color: white;
+}
+
+
+
+@media (max-width: 768px) {
+    .saskia-taula thead {
+        display: none;
+    }
+    
+    .saskia-taula, .saskia-taula tbody, .saskia-taula tr, .saskia-taula td {
+        display: block;
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .saskia-taula tr {
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .saskia-taula td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: right;
+        padding: 10px 5px;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .saskia-taula td:last-child {
+        border-bottom: none;
+        justify-content: center;
+        padding-top: 15px;
+    }
+    
+    .saskia-taula td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-align: left;
+        padding-right: 15px;
     }
 }

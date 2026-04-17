@@ -1,11 +1,9 @@
 <?php 
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+if (session_status() === PHP_SESSION_NONE);
 require_once 'konexioa.php'; 
 ?>
 <?php
-$stmt = $conn->query("SELECT b.izena AS bezero_izena, b.abizenak AS bezero_abizenak, b.suskripzioa AS bezero_suskripzioa, i.deskripzioa, i.balorazioa FROM iritziak i JOIN bezeroak b ON i.bezero_id = b.id LIMIT 5");
+$stmt = $conn->query("SELECT b.izena AS bezero_izena, b.abizena AS bezero_abizena, b.suskripzioa AS bezero_suskripzioa, i.deskripzioa, i.balorazioa FROM iritziak i JOIN bezeroak b ON i.bezero_id = b.id LIMIT 5");
 
 $iritziak = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -27,7 +25,7 @@ $iritziak = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <p>Besteak probatu dituzu, orain probatu hoberena</p>
         </div>
         <div class="prezioak-ikusi">
-            <button class="botoiak" type="button" href="prezioak.html">IKUSI PREZIOAK</button>
+            <button class="botoiak" type="button" href="prezioak.php">IKUSI PREZIOAK</button>
         </div>
     </section>
 
