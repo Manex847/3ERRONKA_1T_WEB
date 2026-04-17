@@ -324,6 +324,45 @@
     background-color: red;
 }
 
+/* Hizkuntza aukerak */
+.hizkuntza-aukerak {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    display: flex;
+    gap: 10px;
+}
+
+.hizkuntza {
+    width: 36px;
+    height: 36px;
+    background-color: rgb(30, 36, 46);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+
+.hizkuntza img {
+    width: 22px;
+    height: 22px;
+    border-radius: 3px;
+}
+
+.hizkuntza:hover {
+    background-color: rgb(50, 56, 66);
+    cursor: pointer;
+}
+
+.hizkuntza.aktibo {
+    background-color: blue;
+    border-color: white;
+}
+
+
 
 @media (max-width: 768px) {
     .saskia-taula thead {

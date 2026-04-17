@@ -1,7 +1,5 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+if (session_status() === PHP_SESSION_NONE);
 $saskia = $_SESSION['saskia'] ?? [];
 $total = 0;
 ?>
@@ -14,7 +12,7 @@ $total = 0;
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <?php include 'header.html'; ?>
+    <?php include 'header.php'; ?>
     <main>
         <section class="nor-gara saskia-seksioa">
             <h1>ZURE SASKIA</h1>
@@ -69,6 +67,6 @@ $total = 0;
             </div>
         </section>
     </main>
-    <?php include 'modooscuro.php'; ?>
+    <?php include 'ilunmodua.php'; ?>
 </body>
 </html>
