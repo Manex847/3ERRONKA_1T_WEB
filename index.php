@@ -5,7 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 require_once 'conexion.php'; 
 ?>
 <?php
-$stmt = $conn->query("SELECT bezero_izena, bezero_abizenak, bezero_suskripzioa, deskripzioa, balorazioa FROM iritziak LIMIT 5");
+$stmt = $conn->query("SELECT id, deskripzioa, balorazioa, bezero_id FROM iritziak LIMIT 5");
 $iritziak = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -56,8 +56,7 @@ $iritziak = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="iritziak-grid">
             <?php foreach ($iritziak as $iritzia): ?>
                 <div class="iritzia">
-                    <h3><?= htmlspecialchars($iritzia['bezero_izena'] . ' ' . $iritzia['bezero_abizenak']) ?></h3>
-                    <span class="suskripzioa"><?= htmlspecialchars($iritzia['bezero_suskripzioa']) ?></span>
+                    <h3>Bezeroa #<?= htmlspecialchars($iritzia['bezero_id']) ?></h3>
                     <div class="izarrak">
                         <?php for ($i = 1; $i <= 5; $i++): ?>
                             <span class="<?= $i <= $iritzia['balorazioa'] ? 'izar betea' : 'izar hutsa' ?>">★</span>

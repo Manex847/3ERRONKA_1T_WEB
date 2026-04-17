@@ -2,7 +2,7 @@
 
     $xmlModo = simplexml_load_file('modooscuro.xml');
     
-    $temaActual = isset($_SESSION['tema']) ? $_SESSION['tema'] : 'claro';
+    $temaActual = isset($xmlModo->estado) ? (string)$xmlModo->estado : 'claro';
     $esOscuro = ($temaActual === 'oscuro');
 ?>
 

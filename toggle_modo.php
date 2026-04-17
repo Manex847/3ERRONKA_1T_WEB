@@ -1,12 +1,18 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+$xmlFile = 'modooscuro.xml';
+if (file_exists($xmlFile)) {
+    $xml = simplexml_load_file($xmlFile);
+    
+    
+    $temaActual = isset($xml->estado) ? (string)$xml->estado : 'claro';
+    
+    
+    $nuevoTema = ($temaActual === 'claro') ? 'oscuro' : 'claro';
+    
+    
+    $xml->estado = $nuevoTema;
+    $xml->asXML($xmlFile);
 }
-
-$temaActual = isset($_SESSION['tema']) ? $_SESSION['tema'] : 'claro';
-$nuevoTema = ($temaActual === 'claro') ? 'oscuro' : 'claro';
-
-$_SESSION['tema'] = $nuevoTema;
 
 $referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'index.php';
 header("Location: $referer");

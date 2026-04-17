@@ -17,6 +17,7 @@
     position: sticky;
     top: 0;
     z-index: 100;
+    position: fixed;
 }
 
 .lehen-atala {
@@ -324,6 +325,56 @@
     background-color: red;
 }
 
+/* Eskatu Ordua Estiloak */
+.eskatu-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.eskatu-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+.form-taldea {
+    margin-bottom: 15px;
+}
+.form-taldea label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+.form-taldea input, .form-taldea select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+.form-taldea input[readonly] {
+    background-color: #eee;
+    color: #333;
+    font-weight: bold;
+}
+.botoia-bidali {
+    width: 100%;
+    padding: 12px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+.botoia-bidali:hover {
+    background-color: darkblue;
+}
 
 @media (max-width: 768px) {
     .saskia-taula thead {

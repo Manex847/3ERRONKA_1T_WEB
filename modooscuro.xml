@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <modo_oscuro>
+    <estado>claro</estado>
     <textos>
         <activar>🌙 Modu Iluna</activar>
         <desactivar>☀️ Modu Argia</desactivar>
