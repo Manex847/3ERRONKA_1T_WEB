@@ -5,7 +5,12 @@ if (session_status() === PHP_SESSION_NONE) {
 require_once 'conexion.php'; 
 ?>
 <?php
-$stmt = $conn->query("SELECT id, deskripzioa, balorazioa, bezero_id FROM iritziak LIMIT 5");
+$stmt = $conn->query("
+    SELECT i.id, i.deskripzioa, i.balorazioa, b.izena, b.abizena, b.suskripzioa 
+    FROM iritziak i
+    INNER JOIN bezeroak b ON i.bezero_id = b.id
+    LIMIT 6
+");
 $iritziak = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -56,13 +61,21 @@ $iritziak = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="iritziak-grid">
             <?php foreach ($iritziak as $iritzia): ?>
                 <div class="iritzia">
-                    <h3>Bezeroa #<?= htmlspecialchars($iritzia['bezero_id']) ?></h3>
+                    <h3 class="bezero-izena"><?= htmlspecialchars($iritzia['izena'] . ' ' . $iritzia['abizena']) ?></h3>
+                    <div class="suskripzio-mota"><?= htmlspecialchars($iritzia['suskripzioa']) ?> Modua</div>
                     <div class="izarrak">
-                        <?php for ($i = 1; $i <= 5; $i++): ?>
-                            <span class="<?= $i <= $iritzia['balorazioa'] ? 'izar betea' : 'izar hutsa' ?>">★</span>
-                        <?php endfor; ?>
+                        <?php 
+                        $balorazioa = intval($iritzia['balorazioa']);
+                        for ($i = 1; $i <= 5; $i++): 
+                            if ($i <= $balorazioa) {
+                                echo '<span class="izar" style="color: #f5a623;">★</span>';
+                            } else {
+                                echo '<span class="izar" style="color: #ccc;">★</span>';
+                            }
+                        endfor; 
+                        ?>
                     </div>
-                    <p><?= htmlspecialchars($iritzia['deskripzioa']) ?></p>
+                    <p class="deskripzioa">"<?= htmlspecialchars($iritzia['deskripzioa']) ?>"</p>
                 </div>
             <?php endforeach; ?>
         </div>

@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['eskatu_ordua'])) {
     $denboraldia = $_POST['denboraldia'];
     $garbitze_mota = $_POST['garbitze_mota'];
     $prezioa = $_POST['prezioa'];
-    $egoera = "Eskatuta";
+    $egoera = "Garbitzeko";
     $pdf = ""; 
 
     try {
