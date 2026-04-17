@@ -17,6 +17,7 @@
     position: sticky;
     top: 0;
     z-index: 100;
+    position: sticky;
 }
 
 .lehen-atala {
@@ -127,6 +128,7 @@
     background-color: rgb(223, 223, 223);
     padding-top: 15px;
     margin-top: 0px;
+    gap: 10px;
 }
 
 .iritzia{
@@ -135,6 +137,27 @@
     margin:5px;
     border-radius: 15px;
     background-color: white;
+}
+
+.bezero-izena {
+    color: rgb(18, 22, 29);
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+}
+
+.suskripzio-mota {
+    color: blue;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.deskripzioa {
+    color: #555;
+    font-style: italic;
+    margin-top: 15px;
+    line-height: 1.5;
 }
 
 .izarrak {
@@ -363,6 +386,56 @@
 }
 
 
+/* Eskatu Ordua Estiloak */
+.eskatu-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.eskatu-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+.form-taldea {
+    margin-bottom: 15px;
+}
+.form-taldea label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+.form-taldea input, .form-taldea select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+.form-taldea input[readonly] {
+    background-color: #eee;
+    color: #333;
+    font-weight: bold;
+}
+.botoia-bidali {
+    width: 100%;
+    padding: 12px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+.botoia-bidali:hover {
+    background-color: darkblue;
+}
 
 @media (max-width: 768px) {
     .saskia-taula thead {

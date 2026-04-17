@@ -55,14 +55,21 @@ $iritziak = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="iritziak-grid">
             <?php foreach ($iritziak as $iritzia): ?>
                 <div class="iritzia">
-                    <h3><?= htmlspecialchars($iritzia['bezero_izena'] . ' ' . $iritzia['bezero_abizenak']) ?></h3>
-                    <span class="suskripzioa"><?= htmlspecialchars($iritzia['bezero_suskripzioa']) ?></span>
+                    <h3 class="bezero-izena"><?= htmlspecialchars($iritzia['izena'] . ' ' . $iritzia['abizena']) ?></h3>
+                    <div class="suskripzio-mota"><?= htmlspecialchars($iritzia['suskripzioa']) ?> Modua</div>
                     <div class="izarrak">
-                        <?php for ($i = 1; $i <= 5; $i++): ?>
-                            <span class="<?= $i <= $iritzia['balorazioa'] ? 'izar betea' : 'izar hutsa' ?>">★</span>
-                        <?php endfor; ?>
+                        <?php 
+                        $balorazioa = intval($iritzia['balorazioa']);
+                        for ($i = 1; $i <= 5; $i++): 
+                            if ($i <= $balorazioa) {
+                                echo '<span class="izar" style="color: #f5a623;">★</span>';
+                            } else {
+                                echo '<span class="izar" style="color: #ccc;">★</span>';
+                            }
+                        endfor; 
+                        ?>
                     </div>
-                    <p><?= htmlspecialchars($iritzia['deskripzioa']) ?></p>
+                    <p class="deskripzioa">"<?= htmlspecialchars($iritzia['deskripzioa']) ?>"</p>
                 </div>
             <?php endforeach; ?>
         </div>
