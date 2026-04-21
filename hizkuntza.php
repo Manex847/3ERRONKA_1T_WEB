@@ -11,7 +11,7 @@ if (isset($_GET["lang"])) {
     $_SESSION["lang"] = $_GET["lang"];
 }
 
-$langFile = __DIR__ . "/lang/" . $_SESSION["lang"] . ".php";
+$langFile = __DIR__ . "/Lang/" . $_SESSION["lang"] . ".php";
 
 if (file_exists($langFile)) {
     $lang = include $langFile;
