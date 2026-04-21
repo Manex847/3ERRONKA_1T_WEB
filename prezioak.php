@@ -111,7 +111,24 @@ if (session_status() === PHP_SESSION_NONE);
                         </form>
                     </div>
                 </article>
-
+                <article class="ceo">
+                    <h3>Barruko erabilerarako erabilera anitzeko zapiak</h3>
+                    <div class="prezioa">
+                        <span style="font-size: 2rem; font-weight: bold;">2.50€</span>
+                    </div>
+                    <p>• Praktikoak eta erabiltzeko azkarrak<br>
+                       • Akabera garbia eta usain atsegina</p>
+                    <div class="prezioak-ikusi" style="margin-top: 20px;">
+                        <form action="saskira_gehitu.php" method="POST">
+                            <input type="hidden" name="ekintza" value="gehitu">
+                            <input type="hidden" name="id" value="ext1">
+                            <input type="hidden" name="izena" value="Usain Gozagarria (Pinu)">
+                            <input type="hidden" name="prezioa" value="3.50">
+                            <input type="hidden" name="mota" value="Produktua">
+                            <button type="submit" class="botoiak">Saskira Gehitu</button>
+                        </form>
+                    </div>
+                </article>
                 <article class="ceo">
                     <h3>Marruskadura Argizaria</h3>
                     <div class="prezioa">
