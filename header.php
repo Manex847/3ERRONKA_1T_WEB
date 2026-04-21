@@ -67,6 +67,25 @@ $beltza = ($oraingoTema === 'iluna');
     </div>
 </header>
 
+<?php
+if (isset($_SESSION['bezero_id'])) {
+    try {
+        $stmtUser = $conn->prepare("SELECT izena FROM bezeroak WHERE id = ?");
+        $stmtUser->execute([$_SESSION['bezero_id']]);
+        $usuario = $stmtUser->fetch(PDO::FETCH_ASSOC);
+        if ($usuario) {
+            $mensajeBienvenida = "Ongi etorri, " . htmlspecialchars($usuario['izena']) . "!";
+            echo "<div style='background-color: #4CAF50; color: white; padding: 10px; text-align: center; font-weight: bold;'>";
+            echo $mensajeBienvenida;
+            echo " <a href='logout.php' style='color: white; text-decoration: underline; margin-left: 20px;'>Saioa itxi</a>";
+            echo "</div>";
+        }
+    } catch (Exception $e) {
+        // Error silencioso
+    }
+}
+?>
+
 <?php include 'ilunmodua.php'; ?>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
