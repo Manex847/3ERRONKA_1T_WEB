@@ -1,7 +1,7 @@
 <?php
-session_start();
+
+include 'hizkuntza.php';
 include "konexioa.php";
-include "header.php";
 
 $errorea = $_GET['errorea'] ?? '';
 $mezua = '';
@@ -45,24 +45,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 if ($errorea === 'hutsa') {
-    $mezua = "Eremu guztiak bete behar dira.";
+    $mezua = $lang["errorea_eremuak_bete"] ?? "Eremu guztiak bete behar dira.";
 } elseif ($errorea === 'existitzen') {
-    $mezua = "Email hori dagoeneko erregistratuta dago.";
+    $mezua = $lang["errorea_email_existitzen"] ?? "Email hori dagoeneko erregistratuta dago.";
 }
 ?>
 
 <!DOCTYPE html>
-<html lang="eu">
+<html lang="<?php echo $_SESSION['lang']; ?>">
 <head>
     <meta charset="UTF-8">
-    <title>Erregistroa</title>
+    <title><?php echo $lang["erregistroa"] ?? "Erregistroa"; ?> - A1A Car Wash</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<?php include "header.php"; ?>
+
 <div class="container">
 
-    <h1>Erregistratu</h1>
+    <h1><?php echo $lang["erregistratu"] ?? "Erregistratu"; ?></h1>
 
     <?php if ($mezua !== ''): ?>
         <div class="errorea"><?php echo $mezua; ?></div>
@@ -70,32 +72,33 @@ if ($errorea === 'hutsa') {
 
     <form action="erregistroa.php" method="POST" class="formularioa">
 
-        <label>Izena</label>
+        <label><?php echo $lang["izena"] ?? "Izena"; ?></label>
         <input type="text" name="izena" required>
 
-        <label>Abizena</label>
+        <label><?php echo $lang["abizena"] ?? "Abizena"; ?></label>
         <input type="text" name="abizena" required>
 
-        <label>Emaila</label>
+        <label><?php echo $lang["emaila"] ?? "Emaila"; ?></label>
         <input type="email" name="email" required>
 
-        <label>Pasahitza</label>
+        <label><?php echo $lang["pasahitza"] ?? "Pasahitza"; ?></label>
         <input type="password" name="pasahitza" required>
 
-        <label>Telefonoa</label>
+        <label><?php echo $lang["telefonoa"] ?? "Telefonoa"; ?></label>
         <input type="number" name="telefonoa" required>
 
-        <label>Helbidea</label>
+        <label><?php echo $lang["helbidea"] ?? "Helbidea"; ?></label>
         <input type="text" name="helbidea" required>
 
-        <label>NAN</label>
+        <label><?php echo $lang["nan"] ?? "NAN"; ?></label>
         <input type="text" name="nan" maxlength="9" required>
 
-        <button type="submit">Erregistratu</button>
+        <button type="submit"><?php echo $lang["erregistratu"] ?? "Erregistratu"; ?></button>
     </form>
 
     <p class="erregistro-link">
-        Baduzu kontua? <a href="login.php">Saioa hasi</a>
+        <?php echo $lang["baduzu_kontua"] ?? "Baduzu kontua?"; ?> 
+        <a href="login.php"><?php echo $lang["saioa_hasi"] ?? "Saioa hasi"; ?></a>
     </p>
 
 </div>
