@@ -1,62 +1,64 @@
 <?php 
-if (session_status() === PHP_SESSION_NONE);
+// 1. Cargamos el gestor de idiomas (que ya controla la sesión)
+include 'hizkuntza.php'; 
 require_once 'konexioa.php'; 
-?>
-<?php
-$stmt = $conn->query("SELECT b.izena AS bezero_izena, b.abizena AS bezero_abizena, b.suskripzioa AS bezero_suskripzioa, i.deskripzioa, i.balorazioa FROM iritziak i JOIN bezeroak b ON i.bezero_id = b.id LIMIT 5");
 
+// 2. Consulta de opiniones (esta se mantiene igual)
+$stmt = $conn->query("SELECT b.izena AS bezero_izena, b.abizena AS bezero_abizena, b.suskripzioa AS bezero_suskripzioa, i.deskripzioa, i.balorazioa FROM iritziak i JOIN bezeroak b ON i.bezero_id = b.id LIMIT 5");
 $iritziak = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!doctype html>
-<html lang="eu">
+<html lang="<?php echo $_SESSION['lang']; ?>">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <title>A1A CAR WASH</title>
+    <title><?php echo $lang["titulua"] ?? "A1A CAR WASH"; ?></title>
 </head>
 <body>
     <?php include 'header.php'; ?>
 
     <section class="lehen-atala">
         <div class="slogana">
-            <h1>Zure autoa 30 minutuetan garbituta</h1>
-            <p>Besteak probatu dituzu, orain probatu hoberena</p>
+            <h1><?php echo $lang["slogana_izenburua"] ?? "Zure autoa 30 minutuetan garbituta"; ?></h1>
+            <p><?php echo $lang["slogana_azpipuntua"] ?? "Besteak probatu dituzu, orain probatu hoberena"; ?></p>
         </div>
         <div class="prezioak-ikusi">
-            <button class="botoiak" type="button" href="prezioak.php">IKUSI PREZIOAK</button>
+            <button class="botoiak" type="button" onclick="window.location.href='prezioak.php'">
+                <?php echo $lang["prezioak_ikusi"] ?? "IKUSI PREZIOAK"; ?>
+            </button>
         </div>
     </section>
 
     <section class="nor-gara">
-        <h1>NOR GARA</h1>
+        <h1><?php echo $lang["nor_gara"] ?? "NOR GARA"; ?></h1>
         <div class="ceo-container">
             <div class="ceo">
                 <h3>Manex Olano</h3>
-                <p class="kargua">Sortzailea & CEO</p>
-                <p>Goierriko ikaslea, A1A Car Wash-eko bultzatzaile nagusia.</p>
+                <p class="kargua"><?php echo $lang["ceo_kargua"] ?? "Sortzailea & CEO"; ?></p>
+                <p><?php echo $lang["deskribapena_manex"] ?? "Goierriko ikaslea, A1A Car Wash-eko bultzatzaile nagusia."; ?></p>
             </div>
             <div class="ceo">
                 <h3>Odei Otxoaerrarte</h3>
-                <p class="kargua">Sortzailea & CEO</p>
-                <p>Goierriko ikaslea, operazioen kudeaketaz arduratzen dena.</p>
+                <p class="kargua"><?php echo $lang["ceo_kargua"] ?? "Sortzailea & CEO"; ?></p>
+                <p><?php echo $lang["deskribapena_odei"] ?? "Goierriko ikaslea, operazioen kudeaketaz arduratzen dena."; ?></p>
             </div>
             <div class="ceo">
                 <h3>Ander Criado</h3>
-                <p class="kargua">Sortzailea & CEO</p>
-                <p>Gelaneko ikaslea. Auto garbiketa zerbitzu azkar eta kalitatezkoa eskaintzen du.</p>
+                <p class="kargua"><?php echo $lang["ceo_kargua"] ?? "Sortzailea & CEO"; ?></p>
+                <p><?php echo $lang["deskribapena_ander"] ?? "Gelaneko ikaslea. Auto garbiketa zerbitzu azkar eta kalitatezkoa eskaintzen du."; ?></p>
             </div>
         </div>
     </section>
 
     <section class="komentarioak">
-        <h1>BEZEROEN IRITZIAK</h1>
+        <h1><?php echo $lang["bezeroen_iritziak"] ?? "BEZEROEN IRITZIAK"; ?></h1>
         <div class="iritziak-grid">
             <?php foreach ($iritziak as $iritzia): ?>
                 <div class="iritzia">
                     <h3 class="bezero-izena"><?= htmlspecialchars($iritzia['bezero_izena'] . ' ' . $iritzia['bezero_abizena']) ?></h3>
-                    <div class="suskripzio-mota"><?= htmlspecialchars($iritzia['bezero_suskripzioa']) ?> Modua</div>
+                    <div class="suskripzio-mota"><?= htmlspecialchars($iritzia['bezero_suskripzioa']) ?> <?php echo $lang["modua"] ?? "Modua"; ?></div>
                     <div class="izarrak">
                         <?php 
                         $balorazioa = intval($iritzia['balorazioa']);
@@ -74,6 +76,7 @@ $iritziak = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php endforeach; ?>
         </div>
     </section>
+    
     <?php include 'ilunmodua.php'; ?>
 </body>
 </html>
