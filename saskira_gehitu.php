@@ -3,6 +3,11 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+if (!isset($_SESSION['bezero_id'])) {
+    header("Location: login.php?errorea=saioa_beharrezkoa");
+    exit();
+}
+
 if (!isset($_SESSION['saskia'])) {
     $_SESSION['saskia'] = [];
 }
@@ -47,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 break;
             }
         }
-        $_SESSION['saskia'] = array_values($_SESSION['saskia']); // Reindex
+        $_SESSION['saskia'] = array_values($_SESSION['saskia']);
         header("Location: Saskia.php");
         exit();
 
@@ -60,4 +65,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 header("Location: prezioak.php");
 exit();
-?>

@@ -1,5 +1,4 @@
 <?php 
-if (session_status() === PHP_SESSION_NONE);
 require_once 'konexioa.php'; 
 ?>
 <?php

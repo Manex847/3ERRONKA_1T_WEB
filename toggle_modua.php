@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 $oraingoTema = isset($_SESSION['modua']) ? $_SESSION['modua'] : 'argia';
 $nuevoTema = ($oraingoTema === 'argia') ? 'iluna' : 'argia';

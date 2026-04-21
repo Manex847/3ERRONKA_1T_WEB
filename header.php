@@ -1,6 +1,6 @@
 <?php 
-session_start();
 include "hizkuntza.php";
+include "konexioa.php";
 
 $xmlModua = simplexml_load_file('ilunmodua.xml');
 $oraingoTema = isset($_SESSION['modua']) ? $_SESSION['modua'] : 'argia';

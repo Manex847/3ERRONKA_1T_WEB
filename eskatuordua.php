@@ -2,7 +2,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-require_once 'conexion.php';
+require_once 'konexioa.php';
 
 $mezua = '';
 
@@ -42,7 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['eskatu_ordua'])) {
 
 </head>
 <body>
-    <?php include 'header.html'; ?>
+    <?php include 'header.php'; ?>
+
     
     <main>
         <div class="eskatu-container">
@@ -76,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['eskatu_ordua'])) {
         </div>
     </main>
 
-    <?php include 'modooscuro.php'; ?>
+    <?php include 'ilunmodua.php'; ?>
 
     <script>
         $(document).ready(function() {

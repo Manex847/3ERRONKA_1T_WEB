@@ -1,5 +1,5 @@
 <?php
-if (session_status() === PHP_SESSION_NONE);
+require_once 'konexioa.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
