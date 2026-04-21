@@ -40,5 +40,13 @@ return [
     "argizaria_extra" => "Marruskadura Argizaria",
     "zapiak_info" => "• Praktikoak eta azkarrak",
     "argizaria_info" => "• Eskuz emanda",
-    "pinu_info" => "• Pinu usain iraunkorra"
+    "pinu_info" => "• Pinu usain iraunkorra",
+    "zure_saskia" => "ZURE SASKIA",
+    "saskia_hutsik" => "Zure saskia hutsik dago.",
+    "produktua" => "Produktua",
+    "mota" => "Mota",
+    "kantitatea" => "Kantitatea",
+    "kendu" => "Kendu",
+    "saskia_hustu" => "Saskia Hustu",
+    "ordaindu" => "Ordaindu",
 ];

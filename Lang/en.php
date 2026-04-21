@@ -40,5 +40,13 @@ return [
     "argizaria_extra" => "Friction Wax",
     "zapiak_info" =>"• Practical and fast",
     "argizaria_info" => "• Hand-delivered",
-    "pinu_info" => "• Long-lasting pine scent"
+    "pinu_info" => "• Long-lasting pine scent",
+    "zure_saskia" => "YOUR BASKET",
+    "saskia_hutsik" => "Your cart is empty.",
+    "produktua" => "Product",
+    "mota" => "Type",
+    "kantitatea" => "Quantity",
+    "kendu" => "Remove",
+    "saskia_hustu" => "Empty Cart",
+    "ordaindu" => "Pay it"
 ];
