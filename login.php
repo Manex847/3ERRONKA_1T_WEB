@@ -1,5 +1,4 @@
 <?php
-// 1. Cargamos el gestor de idiomas (gestiona session_start)
 include 'hizkuntza.php';
 include 'konexioa.php';
 
@@ -14,17 +13,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $erabiltzailea = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($erabiltzailea) {
-        // En un entorno real, usa password_verify() si las contraseñas están hasheadas
         if ($pasahitza === $erabiltzailea['pasahitza']) {
             $_SESSION['bezero_id'] = $erabiltzailea['id'];
             header("Location: index.php");
             exit();
         } else {
-            // Error: Contraseña incorrecta
             $mezua = $lang["errorea_pasahitza"] ?? "Pasahitza okerra";
         }
     } else {
-        // Error: Usuario no existe
         $mezua = $lang["errorea_erabiltzailea"] ?? "Ez da erabiltzaile hori existitzen";
     }
 }
@@ -53,5 +49,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <button type="submit" class="botoia-bidali">
             <?php echo $lang["sartu_botoia"] ?? "Sartu"; ?>
         </button>
+        
+        <p class="erregistro-link">
+            <?php echo $lang["ez_duzu_konturik"] ?? "Ez duzu konturik?"; ?> 
+            <a href="erregistroa.php"><?php echo $lang["erregistratu_hemen"] ?? "Erregistratu hemen"; ?></a>
+        </p>
     </form>
 </div>
