@@ -1,5 +1,6 @@
 <?php
 include 'konexioa.php';
+session_start();
 
 $mezua = "";
 
@@ -7,14 +8,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST['email'];
     $pasahitza = $_POST['pasahitza'];
 
-    $sql = $conn->prepare("SELECT id, pasahitza FROM bezeroak WHERE email = ?");
-    $sql->bind_param("s", $email);
-    $sql->execute();
-    $emaitza = $sql->get_result();
+    $stmt = $conn->prepare("SELECT id, pasahitza FROM bezeroak WHERE email = ?");
+    $stmt->execute([$email]);
+    $erabiltzailea = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($emaitza->num_rows === 1) {
-        $erabiltzailea = $emaitza->fetch_assoc();
-
+    if ($erabiltzailea) {
         if (password_verify($pasahitza, $erabiltzailea['pasahitza'])) {
             $_SESSION['bezero_id'] = $erabiltzailea['id'];
             header("Location: panel.php");
@@ -39,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <input type="email" name="email" required>
 
     <label for="pasahitza">Pasahitza:</label>
-    <input type="pasahitza" name="pasahitza" required>
+    <input type="password" name="pasahitza" required>
 
     <button type="submit">Sartu</button>
 </form>
