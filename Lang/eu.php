@@ -49,4 +49,9 @@ return [
     "kendu" => "Kendu",
     "saskia_hustu" => "Saskia Hustu",
     "ordaindu" => "Ordaindu",
+    "emaila" => "Emaila",
+"pasahitza" => "Pasahitza",
+"sartu_botoia" => "Sartu",
+"errorea_pasahitza" => "Pasahitza okerra",
+"errorea_erabiltzailea" => "Ez da erabiltzaile hori existitzen",
 ];

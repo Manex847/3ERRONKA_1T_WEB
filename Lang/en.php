@@ -2,9 +2,9 @@
 return [
     "titulua" => "A1A CAR WASH",
     "saioa_hasi" => "Login",
-    "correo" => "Email",
-    "contrasena" => "Password",
-    "entrar" => "Enter",
+    "emaila" => "Email",
+    "pasahitza" => "Password",
+    "sartu_botoia" => "Enter",
     "hasiera"      => "The beginning",
     "prezioak"     => "Prices",
     "eskatu_ordua" => "Request an appointment",
@@ -48,5 +48,7 @@ return [
     "kantitatea" => "Quantity",
     "kendu" => "Remove",
     "saskia_hustu" => "Empty Cart",
-    "ordaindu" => "Pay it"
+    "ordaindu" => "Pay it",
+    "errorea_pasahitza" => "Wrong password",
+    "errorea_erabiltzailea" => "This user does not exist.",
 ];
