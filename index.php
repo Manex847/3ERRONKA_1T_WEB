@@ -55,7 +55,7 @@ $iritziak = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="iritziak-grid">
             <?php foreach ($iritziak as $iritzia): ?>
                 <div class="iritzia">
-                    <h3><?= htmlspecialchars($iritzia['bezero_izena'] . ' ' . $iritzia['bezero_abizenak']) ?></h3>
+                    <h3><?= htmlspecialchars($iritzia['bezero_izena'] . ' ' . $iritzia['bezero_abizena']) ?></h3>
                     <span class="suskripzioa"><?= htmlspecialchars($iritzia['bezero_suskripzioa']) ?></span>
                     <div class="izarrak">
                         <?php for ($i = 1; $i <= 5; $i++): ?>
