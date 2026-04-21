@@ -1,5 +1,6 @@
 <?php
 include 'konexioa.php';
+session_start();
 
 $mezua = "";
 
@@ -7,17 +8,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST['email'];
     $pasahitza = $_POST['pasahitza'];
 
-    $sql = $conn->prepare("SELECT id, pasahitza FROM bezeroak WHERE email = ?");
-    $sql->bind_param("s", $email);
-    $sql->execute();
-    $emaitza = $sql->get_result();
+    $stmt = $conn->prepare("SELECT id, pasahitza FROM bezeroak WHERE email = ?");
+    $stmt->execute([$email]);
+    $erabiltzailea = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($emaitza->num_rows === 1) {
-        $erabiltzailea = $emaitza->fetch_assoc();
-
-        if (password_verify($pasahitza, $erabiltzailea['pasahitza'])) {
+    if ($erabiltzailea) {
+        if ($pasahitza === $erabiltzailea['pasahitza']) {
             $_SESSION['bezero_id'] = $erabiltzailea['id'];
-            header("Location: panel.php");
+            header("Location: index.php");
             exit();
         } else {
             $mezua = "Pasahitza okerra";
@@ -30,16 +28,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <?php include 'header.php'; ?>
 
-<h2>Saioa hasi</h2>
+<link rel="stylesheet" href="styles.css">
 
-<?php if (!empty($mezua)) echo "<p style='color:red;'>$mezua</p>"; ?>
+<div class="saioa-hasi-container">
+    <h2>Saioa hasi</h2>
 
-<form action="" method="POST">
-    <label for="email">Emaila:</label>
-    <input type="email" name="email" required>
+    <?php if (!empty($mezua)) echo "<p class='saioa-hasi-errorea'>$mezua</p>"; ?>
 
-    <label for="pasahitza">Pasahitza:</label>
-    <input type="pasahitza" name="pasahitza" required>
+    <form action="" method="POST">
+        <div class="form-taldea">
+            <label for="email">Emaila:</label>
+            <input type="email" name="email" id="email" required>
+        </div>
 
-    <button type="submit">Sartu</button>
-</form>
+        <div class="form-taldea">
+            <label for="pasahitza">Pasahitza:</label>
+            <input type="password" name="pasahitza" id="pasahitza" required>
+        </div>
+
+        <button type="submit" class="botoia-bidali">Sartu</button>
+    </form>
+</div>

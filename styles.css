@@ -437,6 +437,66 @@
     background-color: darkblue;
 }
 
+/* Saioa Hasi Estiloak */
+.saioa-hasi-container {
+    max-width: 500px;
+    margin: 50px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 15px lightgrey;
+}
+
+.saioa-hasi-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: rgb(18, 22, 29);
+    font-size: 1.8rem;
+}
+
+.saioa-hasi-container .form-taldea {
+    margin-bottom: 20px;
+}
+
+.saioa-hasi-container .form-taldea label {
+    display: block;
+    margin-bottom: 8px;
+    color: rgb(18, 22, 29);
+    font-weight: bold;
+}
+
+.saioa-hasi-container .form-taldea input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.saioa-hasi-container .botoia-bidali {
+    width: 100%;
+    padding: 12px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.saioa-hasi-container .botoia-bidali:hover {
+    background-color: darkblue;
+}
+
+.saioa-hasi-errorea {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
 @media (max-width: 768px) {
     .saskia-taula thead {
         display: none;
