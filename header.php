@@ -19,8 +19,8 @@
                 <img src="Argazkiak/euskera_botoia.png" alt="EU">
             </a>
 
-            <a href="?lang=es" class="hizkuntza <?php echo $_SESSION['lang']=='es'?'aktibo':''; ?>">
-                <img src="Argazkiak/ingeles_botoia.png" alt="ES">
+            <a href="?lang=en" class="hizkuntza <?php echo $_SESSION['lang']=='en'?'aktibo':''; ?>">
+                <img src="Argazkiak/ingeles_botoia.png" alt="EN">
             </a>
         </div>
     </div>
