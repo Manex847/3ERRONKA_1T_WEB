@@ -107,19 +107,35 @@
     padding-bottom: 5px;
 }
 
-.prezioa {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: blue;
-    margin: 10px 0;
-}
-
 .ceo p {
     color: #333;
     font-size: 0.9rem;
     line-height: 1.4;
     margin-top: 10px;
     text-align: left;
+}
+
+.ceo .prezioak-ikusi {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.ceo .prezioak-ikusi form {
+    display: flex;
+    justify-content: center;
+    width: auto;
+}
+
+.ceo .prezioak-ikusi .botoiak {
+    display: inline-block;
+}
+
+.prezioa {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: blue;
+    margin: 10px 0;
 }
 
 .komentarioak{
@@ -602,7 +618,6 @@
 .erregistro-link a:hover {
     text-decoration: underline;
 }
-
 
 
 @media (max-width: 768px) {

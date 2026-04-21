@@ -1,5 +1,4 @@
 <?php 
-// 1. Incluimos el gestor de idiomas (que ya maneja session_start)
 include 'hizkuntza.php'; 
 ?>
 <!DOCTYPE html>
