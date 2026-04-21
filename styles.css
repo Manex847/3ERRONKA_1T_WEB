@@ -497,6 +497,97 @@
     font-weight: bold;
 }
 
+
+.container {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+
+.container h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+.formularioa {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.formularioa label {
+    text-align: left;
+    font-weight: bold;
+    color: #444;
+}
+
+
+.formularioa input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.formularioa input:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76,175,80,0.4);
+}
+
+
+.formularioa button {
+    background: blue;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: bold;
+}
+
+.formularioa button:hover {
+    background: #43a047;
+}
+
+
+.errorea {
+    background: #ff4d4d;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+
+.container p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.container a {
+    color: darkblue;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+
 @media (max-width: 768px) {
     .saskia-taula thead {
         display: none;
