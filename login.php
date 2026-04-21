@@ -49,5 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
 
         <button type="submit" class="botoia-bidali">Sartu</button>
+        <p class="erregistro-link">
+            Ez duzu konturik? <a href="erregistroa.php">Erregistratu hemen</a>
+        </p>
+
     </form>
 </div>

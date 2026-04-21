@@ -587,6 +587,23 @@
     text-decoration: underline;
 }
 
+.erregistro-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #444;
+}
+
+.erregistro-link a {
+    color: #4CAF50;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.erregistro-link a:hover {
+    text-decoration: underline;
+}
+
+
 
 @media (max-width: 768px) {
     .saskia-taula thead {

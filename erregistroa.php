@@ -7,11 +7,18 @@ $errorea = $_GET['errorea'] ?? '';
 $mezua = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
     $izena = trim($_POST['izena'] ?? '');
+    $abizena = trim($_POST['abizena'] ?? '');
     $email = trim($_POST['email'] ?? '');
     $pasahitza = trim($_POST['pasahitza'] ?? '');
+    $telefonoa = trim($_POST['telefonoa'] ?? '');
+    $helbidea = trim($_POST['helbidea'] ?? '');
+    $nan = trim($_POST['nan'] ?? '');
+    $suskripzioa = "Oinarrizko";
 
-    if ($izena === '' || $email === '' || $pasahitza === '') {
+    if ($izena === '' || $abizena === '' || $email === '' || $pasahitza === '' ||
+        $telefonoa === '' || $helbidea === '' || $nan === '') {
         header("Location: erregistroa.php?errorea=hutsa");
         exit();
     }
@@ -25,8 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $hash = password_hash($pasahitza, PASSWORD_DEFAULT);
 
-    $stmt = $conn->prepare("INSERT INTO bezeroak (izena, email, pasahitza) VALUES (?, ?, ?)");
-    $stmt->execute([$izena, $email, $hash]);
+    $stmt = $conn->prepare("INSERT INTO bezeroak 
+        (izena, abizena, email, pasahitza, telefonoa, helbidea, nan, suskripzioa)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->execute([$izena, $abizena, $email, $hash, $telefonoa, $helbidea, $nan, $suskripzioa]);
 
     $id = $conn->lastInsertId();
     $_SESSION['bezero_id'] = $id;
@@ -64,16 +73,30 @@ if ($errorea === 'hutsa') {
         <label>Izena</label>
         <input type="text" name="izena" required>
 
+        <label>Abizena</label>
+        <input type="text" name="abizena" required>
+
         <label>Emaila</label>
         <input type="email" name="email" required>
 
         <label>Pasahitza</label>
         <input type="password" name="pasahitza" required>
 
+        <label>Telefonoa</label>
+        <input type="number" name="telefonoa" required>
+
+        <label>Helbidea</label>
+        <input type="text" name="helbidea" required>
+
+        <label>NAN</label>
+        <input type="text" name="nan" maxlength="9" required>
+
         <button type="submit">Erregistratu</button>
     </form>
 
-    <p>Baduzu kontua? <a href="login.php">Saioa hasi</a></p>
+    <p class="erregistro-link">
+        Baduzu kontua? <a href="login.php">Saioa hasi</a>
+    </p>
 
 </div>
 
